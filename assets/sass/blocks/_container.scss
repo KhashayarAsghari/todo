@@ -1,0 +1,58 @@
+.container {
+    @include withauto(80%);
+    @include dflex(flex-start, center, column);
+    margin-top: $margin-xxxl;
+    
+    &__header {
+        width: 100%;
+        @include dflex(center, stretch);
+        background-color: $color-main-dark;
+        padding: $padding-m $padding-xl;
+        border-top-left-radius: $border-rad-l;
+        border-top-right-radius: $border-rad-xxl;
+
+        
+
+
+        &__label {
+            display: none;
+        }
+        &__input {
+            width: 80%;
+            padding: $padding-s $padding-m;
+            margin: 0px $margin-xl;
+            outline: none;
+            border: none;
+            border-radius: $border-rad-l;
+            font-size: 2rem;
+
+        }
+        &__button {
+            width: 20%;
+            padding: $padding-xl $padding-m;
+            margin: 0px $margin-xl;
+            border-radius: $border-rad-l;
+        }
+        @media (max-width: 480px) {
+            @include dflex(flex-start, stretch, column, nowrap );
+            &__input {
+                @include withauto(90%);
+                font-size: 1rem;
+                padding: $padding-l $padding-s;
+            }
+            &__button {
+                @include withauto(90%);
+                margin-top: $margin-s;
+            }
+        }
+    }
+
+    &__body {
+        background-color: $color-sub-dark;
+        height: 500px;
+        width: 100%;
+    }
+    
+}
+
+

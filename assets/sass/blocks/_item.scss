@@ -1,0 +1,24 @@
+.item {
+    @include withauto(90%);
+    @include dflex(space-between);
+    padding: $padding-m $padding-xxxl;
+    border-radius: $border-rad-xxl;
+    margin-top: $margin-xl;
+    background-color: $color-items;
+
+    &__done--label {
+        display: none;
+    }
+
+    &__done--input {
+        clip-path: circle(40% at 50% 50%);
+        accent-color: $color-sub-dark;
+        width: 50px;
+        height: 50px;
+        
+    }
+
+    &__task {
+        color: white;
+    }
+}
