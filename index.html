@@ -1,34 +1,43 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/css/main.min.css">
+    <script src="main.js" defer></script>
 </head>
+
 <body>
 
     <header id="header">
-        
+
     </header>
 
     <div class="container">
         <div class="container__header">
             <label class="container__header__label" for="input">Enter task</label>
-            <input class="container__header__input" id="input" name="input" type="text">
+            <input class="container__header__input" id="input" name="input" type="text" autofocus>
 
-            <button class="container__header__button" id="Add">Add</button>
+            <button class="container__header__button" id="add">Add</button>
         </div>
 
-        <div class="container__body">
+        <div id="items-list" class="container__body">
             <div class="item">
-                <h2 class="item__task">a sample task</h2>
+                <div class="item__detail">
+                    <h2 class="item__detail__title">a sample task</h2>
+                </div>
 
-                <label class="item__done--label" for="done">done</label>
-                <input class="item__done--input" id="done"  type="checkbox">
+                <div class="item__controls">
+                    <input class="item__controls--input" id="done" type="checkbox">
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
             </div>
         </div>
     </div>
-    
+
 </body>
+
 </html>

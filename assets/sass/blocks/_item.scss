@@ -6,11 +6,23 @@
     margin-top: $margin-xl;
     background-color: $color-items;
 
-    &__done--label {
-        display: none;
+    &__controls {
+        @include dflex();
+
+        &>i {
+            color: white;
+            margin: 0px $margin-xl;
+            padding: 1rem;
+            font-size: 1.5rem;
+
+            @media (max-width: 480px){
+                margin: 0px;
+                padding: 0.5rem;
+            }
+        }
     }
 
-    &__done--input {
+    &__controls--input {
         clip-path: circle(40% at 50% 50%);
         accent-color: $color-sub-dark;
         width: 50px;
@@ -18,7 +30,7 @@
         
     }
 
-    &__task {
+    &__detail {
         color: white;
     }
 }

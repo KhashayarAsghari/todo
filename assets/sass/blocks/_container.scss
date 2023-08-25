@@ -8,7 +8,7 @@
         @include dflex(center, stretch);
         background-color: $color-main-dark;
         padding: $padding-m $padding-xl;
-        border-top-left-radius: $border-rad-l;
+        border-top-left-radius: $border-rad-xxl;
         border-top-right-radius: $border-rad-xxl;
 
         
@@ -49,8 +49,12 @@
 
     &__body {
         background-color: $color-sub-dark;
-        height: 500px;
+        height: 70vh;
+        max-height: 70vh;
         width: 100%;
+        overflow-y: scroll;
+        border-end-start-radius: $border-rad-xxl;
+        border-end-end-radius: $border-rad-xxl;
     }
     
 }
