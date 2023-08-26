@@ -21,7 +21,10 @@
             <label class="container__header__label" for="input">Enter task</label>
             <input class="container__header__input" id="input" name="input" type="text" autofocus>
 
-            <button class="container__header__button" id="add">Add</button>
+            <button class="container__header__button" id="add">
+                Add
+                <i class="fa-solid fa-plus"></i>
+            </button>
         </div>
 
         <div id="items-list" class="container__body">
@@ -32,9 +35,15 @@
 
                 <div class="item__controls">
                     <input class="item__controls--input" type="checkbox">
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                    <i class="fa-solid fa-trash item__controls__delete"></i>
                 </div>
             </div>
+        </div>
+
+        <div class="container__footer footer">
+            <button class="footer--btn-remove-all"></button>
+            <button class="footer--btn-remove-all-checked"></button>
+            <button class="footer--btn-hide-checked"></button>
         </div>
     </div>
 

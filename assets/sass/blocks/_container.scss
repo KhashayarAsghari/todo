@@ -30,8 +30,10 @@
         &__button {
             width: 20%;
             padding: $padding-xl $padding-m;
+            font-size: 1.5rem;
             margin: 0px $margin-xl;
             border-radius: $border-rad-l;
+            cursor: pointer;
         }
         @media (max-width: 480px) {
             @include dflex(flex-start, stretch, column, nowrap );

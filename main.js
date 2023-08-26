@@ -4,6 +4,7 @@ let btnAdd = document.getElementById('add');
 let input = document.getElementById('input');
 let itemsList = document.getElementById("items-list");
 let doneCheckBox = document.querySelectorAll('.item__controls--input');
+let deleteItem = document.querySelectorAll(".item__controls__delete");
 
 // functions
 
@@ -35,30 +36,56 @@ function addTask() {
         itemCheckBox.setAttribute("type", "checkbox");
 
         let itemMenu = document.createElement('i');//create card menu
-        itemMenu.setAttribute("class", "fa-solid fa-ellipsis-vertical");
+        itemMenu.setAttribute("class", "fa-solid fa-trash");
+        itemMenu.classList.add("item__controls__delete");
 
         itemControls.appendChild(itemCheckBox);//insert checkbox to card controls container
         itemControls.appendChild(itemMenu);//insert card menu into card controls container
 
-        newItem.appendChild(itemControls);
+        newItem.appendChild(itemControls);//insert item controls container to card
 
-        itemsList.appendChild(newItem);
+        itemsList.appendChild(newItem);//insert new card to cards container
 
 
+
+        // select all checkboxes after new card added
         doneCheckBox = document.querySelectorAll(".item__controls--input");
+        // define event for all available checkboxes
         for (let i = 0; i < doneCheckBox.length; i++) {
             doneCheckBox[i].onclick = checked;
         }
-    }else {
-        alert("please fill input")
+
+
+        // select all delete icons after new card added
+        deleteItem = document.querySelectorAll(".item__controls__delete");
+        for (let i = 0; i < deleteItem.length; i++) {
+            deleteItem[i].onclick = removeItem;
+        }
+    } else {
+        alert("please fill input");
+    }
+}
+
+// when a task has checked
+function checked(evt) {
+    if (evt.target.checked) {
+        let parent = evt.target.parentElement.parentElement;
+        parent.classList.add("checked");
+    } else {
+        let parent = evt.target.parentElement.parentElement;
+        parent.classList.remove("checked");
     }
 }
 
 
-function checked(evt) {
-    let parent = evt.target.parentElement.parentElement;
-    parent.classList.add("checked");
-    console.log(parent)
+// when delete item clicked
+function removeItem(evt) {
+    let recheckDelete = confirm("are you sure to delete this item?");
+    if (recheckDelete) {
+        itemsList.removeChild(evt.target.parentElement.parentElement);
+    } else {
+
+    }
 }
 
 
@@ -70,6 +97,8 @@ input.addEventListener('keydown', (event) => {
         addTask();
     }
 });
+
+
 
 
 
